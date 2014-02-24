@@ -1,0 +1,8 @@
+name: KillReward
+main: com.github.thesimpzone.killreward.KillReward
+version: 0.0.1
+depend: [ScoreboardStats, Vault]
+
+commands:
+  killreward:
+    aliases: [kr, killr, kreward, killsr, killsreward]
