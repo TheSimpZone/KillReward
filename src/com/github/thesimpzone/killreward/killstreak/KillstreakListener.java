@@ -1,5 +1,6 @@
 package com.github.thesimpzone.killreward.killstreak;
 
+import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -40,14 +41,16 @@ public class KillstreakListener implements Listener{
 					System.out.println(killercache);
 					if (killercache != null) {
 						killercache.incrementKills();
+						Bukkit.broadcastMessage(Integer.toString(killercache.getLaststreak()));
 						KillReward.economy.depositPlayer(e.getEntity().getKiller().getName(), killercache.getLaststreak()+9);
 					}
 				}
 			}
 		}
 	}
-	
-    @EventHandler
+
+
+	@EventHandler
     public void onJoin(PlayerJoinEvent join) {
     	final Player player = join.getPlayer();
     	Database.loadAccount(player.getName());
