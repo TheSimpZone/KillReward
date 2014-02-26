@@ -1,5 +1,4 @@
 package com.github.thesimpzone.killreward;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,8 +32,7 @@ public class ReloadFixLoader extends ClassLoader {
             cacheField.setBoolean(null, status);
             return true;
         } catch (Exception ex) {
-            //Logger.getLogger("KillReward").severe(Lang.get("changeChageEx", ex));
-        	Logger.getLogger("KillReward").severe("Couldn't disable cache system for classes. This can cause some invalid initialization" + ex);
+            Logger.getLogger("KillReward").severe("changeChageEx");
             return false;
         }
     }
@@ -55,7 +53,7 @@ public class ReloadFixLoader extends ClassLoader {
         } catch (IOException ex) {
             //We cannot use finally because we need the stream open if return the stream
             closeQuietly(jarFile);
-            Logger.getLogger("FileReward")
+            Logger.getLogger("KillReward")
                     .log(Level.WARNING, "Couln't load the resourceBundle", ex);
         }
 
@@ -67,7 +65,7 @@ public class ReloadFixLoader extends ClassLoader {
             try {
                 file.close();
             } catch (IOException ex) {
-                Logger.getLogger("FileReward").log(Level.SEVERE, null, ex);
+                Logger.getLogger("KillReward").log(Level.SEVERE, null, ex);
             }
         }
     }
