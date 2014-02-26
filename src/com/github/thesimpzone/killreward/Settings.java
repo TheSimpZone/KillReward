@@ -47,7 +47,8 @@ public final class Settings {
     }
 
     public static boolean isPvpStats() {
-        return pvpStats;
+        //return pvpStats;
+    	return true;
     }
 
     public static boolean isTempScoreboard() {
