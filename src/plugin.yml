@@ -1,7 +1,8 @@
 name: KillReward
 main: com.github.thesimpzone.killreward.KillReward
 version: 0.0.1
-depend: [ScoreboardStats, Vault]
+database: false
+depend: [Vault]
 
 commands:
   killreward:
