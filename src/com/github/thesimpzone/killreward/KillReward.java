@@ -39,7 +39,7 @@ public final class KillReward extends JavaPlugin implements Listener {
 			getLogger().info("Please install Vault: it is a required dependency for KillReward.");
 			Bukkit.getPluginManager().disablePlugin(instance);
 		}
-		//setupDatabase();
+		setupDatabase();
 	}
  
 	public void onDisable(){
@@ -75,7 +75,7 @@ public final class KillReward extends JavaPlugin implements Listener {
         return list;
     }
 	
-	public void loadConfiguration(){
+/*	public void loadConfiguration(){
 		//settings.loadConfig();
 		//Add default integers.
     	instance.getConfig().addDefault("path.to.integer", 412);
@@ -108,7 +108,7 @@ public final class KillReward extends JavaPlugin implements Listener {
     	instance.getConfig().options().copyDefaults(true);
     	instance.saveConfig();
     	instance.getConfig();
-	}
+	}*/
 	
     public File getFileBypass() {
         return super.getFile();

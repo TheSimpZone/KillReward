@@ -11,7 +11,7 @@ import com.github.thesimpzone.killreward.KillReward;
 public class KillstreakListener implements Listener{
 
 	private KillReward plugin;
-	//private KillstreakManager ksm;
+	private KillstreakManager ksm;
 	private int killstreak;
 
 	public KillstreakListener(KillReward killreward){
@@ -32,12 +32,12 @@ public class KillstreakListener implements Listener{
 			Player killer = e.getEntity().getKiller();
 			Player killed = e.getEntity();
 			
-			killstreak = 1;
+			//killstreak = 1;
 			
-			//killstreak = ksm.getKillstreak(killer.getName());
-			//killstreak++;
-			//ksm.setKillstreak(killer.getName(), killstreak);
-			//ksm.setKillstreak(killed.getName(),0);
+			killstreak = ksm.getKillstreak(killer.getName());
+			killstreak++;
+			ksm.setKillstreak(killer.getName(), killstreak);
+			ksm.setKillstreak(killed.getName(),0);
 			plugin.getLogger().info("KsL PDE killedByPlayer logged. Killed: " + killed.getName() + " Killer: " + killer.getName() + " Killstreak: " + killstreak);
 			KillReward.economy.depositPlayer(killer.getName(), 9+killstreak);
 			killer.sendMessage("You killed " + killed.getName() + " and should receive $" + 9+killstreak);
